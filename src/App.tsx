@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import update from "immutability-helper";
+import Main from "./components/Solution2/Main";
+import DnD1 from "./components/Solution1/DnD1";
+import CustomDnD from "./components/Vanilla/CustomDnD";
+import VisualDnD from "./components/Vanilla/VisualDnD";
+import DnD3 from "./components/Soution3/DnD3";
+import DnD4 from "./components/Solution4/DnD4";
 
-function App() {
+
+/**
+ * 
+ * The DnD4 Solution is the best solution so far.
+ * 
+ * @returns 
+ */
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DndProvider backend={ HTML5Backend }>
+      {/* <CustomDnD /> */}
+      {/* <div style={{margin: '10px'}} ></div> */}
+      {/* <VisualDnD /> */}
+      {/* <div style={{margin: '10px'}} ></div> */}
+      {/* <DnD1 /> */}
+      {/* <div style={{margin: '10px'}} ></div> */}
+      {/* <Main /> */}
+      {/* <div style={{margin: '10px'}} ></div> */}
+      <DnD3 />
+      <div style={{margin: '10px'}} ></div>
+      <DnD4 />
+    </DndProvider>
   );
-}
+};
 
 export default App;
